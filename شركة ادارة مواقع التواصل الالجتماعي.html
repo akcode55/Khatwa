@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>شركة ادارة مواقع التواصل الاجتماعي</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <img src="final logo.png" alt="خطوه لوجو" class="logo">
+                </a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">خطوه</a></li>
+                <li><a href="servese.html">خدمتنا</a></li>
+                <li><a href="about khatwa.html">عن خطوه</a></li>
+                <li><a href="contact us.html">تواصل معنا</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-container social-media-project">
+        <div class="project-info">
+            <h1 class="project-title">شركة لإدارة مواقع التواصل الاجتماعي</h1>
+            <div class="project-description social-description">
+                <p>انشئ شركة لإدارة مواقع التواصل الاجتماعي للمشاهير وأصحاب الشركات. قم بتجهيز المكتب بأحدث الأجهزة وتوظيف فريق متخصص لمساعدتك في إدارة المحتوى والتفاعل مع الجمهور.</p>
+            </div>
+        </div>
+
+        <div class="project-image social-image">
+            <img src="شركة ادارة حسابات مواقع التواصل الالجتماعي.png" alt="شركة ادارة مواقع التواصل" class="feature-image">
+        </div>
+
+        <div class="action-buttons social-buttons">
+            <a href="https://www.rowadalaamal.com/%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D8%B4%D8%B1%D9%83%D8%A9-%D9%84%D8%A5%D8%DF%D8%A9-%D8%B5%D9%81%D8%AD%D8%A7%D8%AA-%D9%85%D9%88%D8%A7%D9%82%D8%B9-%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%B5%D9%84" class="btn-link">دليل انشاء الشركة</a>
+            <a href="https://www.codeek.net/blog/social-media-management#google_vignette" class="btn-link">خطة العمل</a>
+            <a href="https://www.mediafire.com/file/uusj7o6azpmdr60/%25D8%25AF%25D8%25B1%25D8%25A7%25D8%25B3%25D8%25A9_%25D8%25A7%25D9%2584%25D8%25AC%25D8%25AF%25D9%2588%25D9%258A_%25D9%2584%25D8%25B4%25D8%25B1%25D9%2583%25D8%25A9_%25D8%25A7%25D8%25AF%25D8%25A7%25D8%25B1%25D8%25A9_%25D9%2585%25D9%2588%25D8%25A7%25D9%2582%25D8%25B9_%25D8%25A7%25D9%2584%25D8%25AA%25D9%2588%25D8%25A7%25D8%25B5%25D9%2584_%25D8%25A7%25D9%2584%25D8%25A7%25D8%25AC%25D8%25AA%25D9%2585%25D8%25A7%25D8%25B9%25D9%258A.pdf/file" class="btn-download" download>تحميل دراسة الجدوى</a>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

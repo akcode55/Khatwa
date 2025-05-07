@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>المشاريع الخدميه</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <img src="final logo.png" class="logo" alt="خطوة">
+                </a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">خطوه</a></li>
+                <li><a href="servese.html">خدمتنا</a></li>
+                <li><a href="about khatwa.html">عن-خطوه</a></li>
+                <li><a href="contact us.html">تواصل-معنا</a></li>
+                <li><a href="login.html">تسجيل-الدخول</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="service-projects">
+        <h1 class="page-title">المشاريع الخدمية</h1>
+        <p class="project-description"><pre>هي المشاريع التي تقدم خدمية معينة للناس مقابل مبلغ مالي والتربح من خلال اعطاء او اتاحة تلك الخدمه</pre></p>
+        
+        <div class="category-image">
+            <img src="خدميه.png" alt="المشاريع الخدمية" class="category-img">
+        </div>
+        
+        <div class="price-filter">
+            <select name="السعر" id="سعر المشاريع" class="select">
+                <optgroup class="week">
+                    <option value="سعر ضعيف" class="color">سعر ضعيف</option>
+                    <option value="50000">50000</option>
+                    <option value="60000">60000</option>
+                    <option value="70000">70000</option>
+                    <option value="80000">80000</option>
+                    <option value="90000">90000</option>
+                    <option value="100000">100000</option>
+                </optgroup>
+                <optgroup class="medeum">
+                    <option value="السعر المتوسط" class="color">السعر المتوسط</option>
+                    <option value="150000">150000</option>
+                    <option value="200000">200000</option>
+                    <option value="250000">250000</option>
+                    <option value="300000">300000</option>
+                    <option value="350000">350000</option>
+                    <option value="400000">400000</option>
+                    <option value="450000">450000</option>
+                    <option value="500000">500000</option>
+                </optgroup>
+                <optgroup class="high">
+                    <option value="السعر المرتفع" class="color">السعر المرتفع</option>
+                    <option value="1000000">1000000</option>
+                    <option value="1500000">1500000</option>
+                    <option value="2000000">2000000</option>
+                    <option value="2500000">2500000</option>
+                    <option value="3000000">3000000</option>
+                    <option value="3500000">3500000</option>
+                    <option value="4000000">4000000</option>
+                    <option value="4500000">4500000</option>
+                    <option value="5000000">5000000</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="container">
+            <div class="box">
+                <img src="صورة شركة توصيل.jpeg" alt="شركة توصيل">
+                <a href="شركة توصيل.html">شركة توصيل</a>
+            </div>
+            
+            <div class="box">
+                <img src="شركة لتقديم الدعم الفني.png" class="image" alt="مكتب لتقديم الدعم الفني">
+                <a href="مكتب لتقديم الدعم الفني.html">مكتب لتقديم الدعم الفني</a>
+            </div>
+            
+            <div class="box">
+                <img src="مكتب لحجز التذاكر.png" class="image" alt="مكتب لحجز تذاكر السفر">
+                <a href="مكتب لحجز تذاكر السفر.html">مكتب لحجز تذاكر السفر</a>
+            </div>
+            
+            <div class="box">
+                <img src="مكتب للترجمه.png" class="image" alt="مكتب للترجمة">
+                <a href="مكتب للترجمه.html">مكتب للترجمة</a>
+            </div>
+            
+            <div class="box">
+                <img src="مكتب لتعليم اللغات.png" class="image" alt="مكتب لتعليم اللغات">
+                <a href="مكتب لتعليم اللغات.html">مكتب لتعليم اللغات</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.querySelector('.select').addEventListener('change', function () {
+            const price = this.value;
+
+            switch (price) {
+                case "50000":
+                    window.location.href = "شركة توصيل.html";
+                    break;
+                case "60000":
+                    window.location.href = "مكتب لتقديم الدعم الفني.html";
+                    break;
+                case "70000":
+                    window.location.href = "مكتب لحجز تذاكر السفر.html";
+                    break;
+                case "80000":
+                    window.location.href = "مكتب للترجمه.html";
+                    break;
+                case "90000":
+                    window.location.href = "مكتب لتعليم اللغات.html";
+                    break;
+                default:
+                    break;
+            }
+        });
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

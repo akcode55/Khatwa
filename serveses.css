@@ -1,0 +1,255 @@
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #ffdd57;
+    --text-color: #333;
+    --bg-color: #f5f5f5;
+    --white: #fff;
+}
+
+body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    height: 80px;
+}
+
+.nav-brand {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+    margin-right: 120px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.7rem 1.2rem;
+    border-radius: 6px;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Services Container Styles */
+.services-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.services-header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    position: relative;
+    display: inline-block;
+}
+
+.services-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.services-content {
+    background-color: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.description p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.description p:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-brand {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-bottom: 1rem;
+    }
+
+    .nav-links {
+        margin-right: 0;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 0.8rem;
+    }
+
+    .services-container {
+        padding: 0 1rem;
+    }
+
+    .services-header h1 {
+        font-size: 2rem;
+    }
+
+    .services-content {
+        padding: 1.5rem;
+    }
+
+    .description p {
+        font-size: 1rem;
+    }
+
+    /* أنماط زر القائمة المتنقلة */
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .menu-toggle span {
+        height: 3px;
+        width: 100%;
+        background-color: var(--white);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* تحديث أنماط الموبايل */
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: flex;
+        }
+        
+        .navbar {
+            padding: 1rem;
+            position: relative;
+        }
+        
+        .nav-brand {
+            margin: 0 auto;
+            position: relative;
+            right: auto;
+            top: auto;
+            transform: none;
+        }
+        
+        .nav-links {
+            display: none;
+            width: 100%;
+            background-color: var(--primary-color);
+            position: absolute;
+            top: 80px;
+            right: 0;
+            left: 0;
+            flex-direction: column;
+            padding: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            margin-right: 0;
+            text-align: center;
+        }
+        
+        .nav-links.active {
+            display: flex;
+        }
+        
+        .nav-links li {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .nav-links a {
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: block;
+        }
+        
+        .nav-links li:last-child a {
+            border-bottom: none;
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-container {
+        max-width: 90%;
+    }
+}

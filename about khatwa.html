@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about khatwa.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>عن خطوه</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <img src="final logo.png" alt="خطوه لوجو" class="logo">
+                </a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">خطوه</a></li>
+                <li><a href="servese.html">خدمتنا</a></li>
+                <li><a href="about khatwa.html">عن خطوه</a></li>
+                <li><a href="contact us.html">تواصل معنا</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1>عن خطوه</h1>
+        <div class="description">
+            <p>
+                خطوه هو مشروع تخرج طلبة من كلية اداب قسم تقنية المعلومات والمكتبات ليناقش ويعرض مجموعه من المشاريع وهذا الموقع يحتوي علي اربع مجالات من المشاريع لكل مجال خمس مشاريع مقترحةلهم دراسة جدوي ولينكات لمعرفة مهلومات اكثر عنهم من خلال البحث اكتر في هذه المجالات ودراستهم بشكل اوسع واشمل
+            </p>
+        </div>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

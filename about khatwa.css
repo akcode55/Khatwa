@@ -1,0 +1,285 @@
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #ffdd57;
+    --text-color: #333;
+    --bg-color: #f5f5f5;
+    --white: #fff;
+}
+
+body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    direction: rtl;
+    text-align: center;
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    height: 80px;  /* Added fixed height */
+}
+
+.nav-brand {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo {
+    width: 80px;  /* Adjusted size */
+    height: 80px;
+    object-fit: contain;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;  /* Increased gap */
+    margin: 0;
+    padding: 0;
+    margin-right: 100px;  /* Adjusted margin */
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2rem;  /* Slightly larger font */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.7rem 1.2rem;  /* Increased padding */
+    border-radius: 6px;  /* Slightly rounded corners */
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.15);  /* Slightly more visible hover */
+    color: var(--secondary-color);
+    transform: translateY(-2px);  /* Added hover lift effect */
+}
+
+/* Update mobile styles */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-brand {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-bottom: 1rem;
+    }
+
+    .nav-links {
+        margin-right: 0;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 0.8rem;  /* Adjusted mobile gap */
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.8rem;  /* Adjusted mobile padding */
+    }
+
+    .logo {
+        width: 70px;  /* Smaller on mobile */
+        height: 70px;
+    }
+}
+
+.content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.description p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .btn {
+        margin-top: 1rem;
+    }
+
+    .description p {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .logo {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/* أنماط زر القائمة المتنقلة */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* تحديث أنماط الموبايل */
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        flex-direction: column;
+        padding: 1rem;
+        position: relative;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-brand {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-bottom: 0;
+    }
+    
+    .nav-links {
+        margin-right: 0;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        left: 0;
+        background-color: var(--primary-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 0;
+        z-index: 1000;
+        display: none;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+    
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .description p {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact us.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>تواصل معنا</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <img src="final logo.png" alt="خطوه لوجو" class="logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">خطوه</a></li>
+                <li><a href="servese.html">خدمتنا</a></li>
+                <li><a href="about khatwa.html">عن خطوه</a></li>
+                <li><a href="contact us.html">تواصل معنا</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+        <section class="contact-header">
+            <h1>تواصل معنا</h1>
+            <p class="contact-intro">نحن هنا لمساعدتك! يمكنك التواصل معنا عبر أي من الوسائل التالية</p>
+        </section>
+
+        <section class="contact-form-section">
+            <div class="contact-form">
+                <h2>أرسل لنا رسالة</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" placeholder="الاسم الكامل" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="البريد الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="رقم الهاتف">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="رسالتك" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">إرسال الرسالة</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="social-links">
+            <h2>تواصل معنا عبر</h2>
+            <div class="social-icons">
+                <a href="https://wa.me/qr/7NC7HCS5BXK4P1" target="_blank" class="social-icon">
+                    <img src="l_whatsapp_icon.png" alt="واتساب">
+                    <span>واتساب</span>
+                </a>
+                <a href="https://tr.ee/eQTYfAHHd-" target="_blank" class="social-icon">
+                    <img src="telegram-3d-icon-free-png.png" alt="تليجرام">
+                    <span>تليجرام</span>
+                </a>
+                <a href="mailto:abbdelrahmanfadl87@gmail.com" class="social-icon">
+                    <img src="_mail_icon.png" alt="البريد الإلكتروني">
+                    <span>البريد الإلكتروني</span>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

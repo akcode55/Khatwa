@@ -1,0 +1,1754 @@
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #ffdd57;
+    --text-color: #333;
+    --bg-color: #f5f5f5;
+    --white: #fff;
+    --mobile-sm: 480px;
+    --mobile-md: 768px;
+    --tablet: 992px;
+}
+
+body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-brand {
+    padding: 0.5rem;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--secondary-color);
+}
+
+/* Content Styles */
+.content-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.project-info {
+    grid-column: 1 / -1;
+}
+
+.project-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.project-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.project-description {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.project-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.project-image {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.project-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.project-image img:hover {
+    transform: scale(1.02);
+}
+
+.action-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn-link, .btn-download {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 200px;
+}
+
+.btn-link {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-download {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.btn-link:hover, .btn-download:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Add hamburger menu styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* تحسين أنماط زر القائمة المتنقلة */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Responsive Design */
+/* تحسين الاستجابة للشاشات المختلفة */
+@media (max-width: 992px) {
+    .content-container {
+        padding: 0 1.5rem;
+        gap: 2.5rem;
+    }
+    
+    .project-title {
+        font-size: 2.2rem;
+    }
+    
+    .project-description {
+        padding: 2rem;
+    }
+}
+
+/* تحسين الاستجابة للهواتف المتوسطة */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .navbar {
+        padding: 0.8rem 1rem;
+        position: relative;
+    }
+    
+    .nav-brand {
+        margin: 0 auto;
+    }
+    
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .nav-links {
+        display: none;
+        width: 100%;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 70px;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        padding: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .nav-links a {
+        padding: 0.8rem;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    .content-container {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+        gap: 1.5rem;
+        margin: 1.5rem auto;
+    }
+
+    .project-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-description {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-description p {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: right; /* تحسين محاذاة النص */
+        word-wrap: break-word; /* منع تجاوز النص للحدود */
+        white-space: normal; /* السماح بالتفاف النص */
+        letter-spacing: 0.5px; /* زيادة المسافة بين الحروف */
+    }
+    
+    .project-image img {
+        border-radius: 10px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .btn-link, .btn-download {
+        width: 100%;
+        max-width: 300px;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        min-width: auto;
+    }
+}
+
+/* تحسين الاستجابة للهواتف الصغيرة */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .menu-toggle {
+        width: 25px;
+        height: 18px;
+    }
+    
+    .content-container {
+        padding: 0 0.8rem;
+        gap: 1rem;
+        margin: 1rem auto;
+    }
+    
+    .project-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .project-title::after {
+        width: 80px;
+        bottom: -8px;
+    }
+    
+    .project-description {
+        padding: 1.2rem;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+    }
+    
+    .project-description p {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin: 0;
+        padding: 0;
+        text-align: right;
+        word-spacing: 1px; /* تحسين المسافة بين الكلمات */
+        color: var(--text-color);
+    }
+    
+    .project-image {
+        margin: 0.5rem 0;
+    }
+    
+    .project-image img {
+        border-radius: 8px;
+    }
+    
+    .action-buttons {
+        margin-top: 1rem;
+    }
+    
+    .btn-link, .btn-download {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+}
+
+/* تحسينات إضافية للهواتف الصغيرة جداً */
+@media (max-width: 360px) {
+    .project-description p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        padding: 0.5rem 0;
+    }
+    
+    .project-title {
+        font-size: 1.3rem;
+    }
+    
+    .content-container {
+        padding: 0 0.6rem;
+        margin: 0.8rem auto;
+    }
+    
+    .btn-link, .btn-download {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
+/* تحسين تجربة المستخدم عند النقر على الأزرار في الهواتف */
+@media (hover: none) {
+    .btn-link:active, .btn-download:active {
+        transform: translateY(-2px);
+        transition: transform 0.1s;
+    }
+    
+    .project-image img:active {
+        transform: scale(1.01);
+        transition: transform 0.1s;
+    }
+}
+
+/* تحسين سرعة تحميل الصور على الهواتف */
+@media (max-width: 768px) {
+    .project-image img {
+        max-height: 300px;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-image img {
+        max-height: 200px;
+    }
+}
+
+/* Feature Image Styles */
+.feature-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    margin: 2rem 0;
+}
+
+.feature-image:hover {
+    transform: scale(1.03) translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Enhanced Project Description */
+.project-description {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.project-description p {
+    font-size: 1.2rem;
+    line-height: 2;
+    color: var(--text-color);
+    margin: 0;
+    text-align: justify;
+}
+
+/* Enhanced Button Styles */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 3rem 0;
+}
+
+.btn-link, .btn-download {
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    min-width: 200px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-link::before, .btn-download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.btn-link:hover::before, .btn-download:hover::before {
+    transform: translateY(0);
+}
+
+.btn-link {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-download {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.btn-link:hover, .btn-download:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .feature-image {
+        max-width: 95%;
+    }
+
+    .project-description {
+        padding: 1.5rem;
+    }
+
+    .project-description p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+
+    .btn-link, .btn-download {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+/* E-commerce Project Specific Styles */
+.project-title {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-description {
+    background: linear-gradient(145deg, var(--white), #f8f9fa);
+    padding: 3rem;
+    border-radius: 25px;
+    position: relative;
+}
+
+.project-description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 5px 5px 0 0;
+}
+
+.project-description p {
+    font-size: 1.3rem;
+    line-height: 2.2;
+    text-align: justify;
+    color: var(--text-color);
+}
+
+.feature-image {
+    max-width: 85%;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 3rem 0;
+}
+
+.feature-image:hover {
+    transform: scale(1.05) translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+.action-buttons {
+    margin-top: 4rem;
+    gap: 2rem;
+}
+
+.btn-link, .btn-download {
+    padding: 1.2rem 2.5rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    min-width: 220px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, var(--primary-color), #1557b0);
+}
+
+.btn-download {
+    background: linear-gradient(145deg, var(--secondary-color), #ffd32a);
+}
+
+.btn-link::after, .btn-download::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+    transform: scale(0);
+    transition: transform 0.6s ease-out;
+}
+
+.btn-link:hover::after, .btn-download:hover::after {
+    transform: scale(1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .project-description {
+        padding: 2rem;
+    }
+
+    .project-description p {
+        font-size: 1.1rem;
+        line-height: 1.9;
+    }
+
+    .feature-image {
+        max-width: 95%;
+        margin: 2rem 0;
+    }
+
+    .action-buttons {
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+
+    .btn-link, .btn-download {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        min-width: 200px;
+    }
+}
+
+/* Farm Project Specific Styles */
+.farm-description {
+    background: linear-gradient(145deg, var(--white), #f0f4f8);
+    border-left: 5px solid var(--primary-color);
+    padding: 2.5rem;
+}
+
+.farm-description p {
+    font-size: 1.4rem;
+    line-height: 2.2;
+    color: var(--text-color);
+    text-align: justify;
+    position: relative;
+    padding-right: 2rem;
+}
+
+.farm-description p::before {
+    content: '🐔';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.8rem;
+}
+
+.farm-image {
+    position: relative;
+    padding: 2rem;
+}
+
+.farm-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(26, 115, 232, 0.1), rgba(255, 221, 87, 0.1));
+    border-radius: 30px;
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+.farm-image .feature-image {
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.farm-image .feature-image:hover {
+    transform: scale(1.05) translateY(-20px);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25);
+}
+
+/* Enhanced Button Styles for Farm Project */
+.farm-buttons .btn-link,
+.farm-buttons .btn-download {
+    background: linear-gradient(145deg, var(--primary-color), #1557b0);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.farm-buttons .btn-download {
+    background: linear-gradient(145deg, var(--secondary-color), #ffd32a);
+    color: var(--text-color);
+}
+
+/* Responsive Adjustments for Farm Project */
+@media (max-width: 768px) {
+    .farm-description p {
+        font-size: 1.2rem;
+        line-height: 2;
+        padding-right: 3rem;
+    }
+
+    .farm-description p::before {
+        font-size: 1.5rem;
+    }
+
+    .farm-image .feature-image {
+        max-width: 100%;
+    }
+
+    .farm-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Social Media Project Specific Styles */
+/* Cafe Project Specific Styles */
+.cafe-project {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+    padding: 2rem;
+    border-radius: 30px;
+}
+
+.cafe-description {
+    background: linear-gradient(145deg, var(--white), #fff8f0);
+    border-right: 5px solid #795548;
+    padding: 2.5rem;
+    position: relative;
+}
+
+.cafe-description::before {
+    content: '☕';
+    position: absolute;
+    right: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+}
+
+.cafe-description p {
+    font-size: 1.4rem;
+    line-height: 2.2;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+.cafe-image {
+    position: relative;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.cafe-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(121, 85, 72, 0.1),  /* Brown */
+        rgba(141, 110, 99, 0.1),  /* Light Brown */
+        rgba(188, 170, 164, 0.1)  /* Beige */
+    );
+    border-radius: 30px;
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+.cafe-image .feature-image {
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cafe-image .feature-image:hover {
+    transform: scale(1.05) translateY(-15px);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.2);
+}
+
+.cafe-buttons {
+    margin-top: 3rem;
+}
+
+.cafe-buttons .btn-link {
+    background: linear-gradient(145deg, #795548, #6d4c41);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cafe-buttons .btn-download {
+    background: linear-gradient(145deg, #8d6e63, #795548);
+    color: var(--white);
+}
+
+/* Responsive Adjustments for Cafe Project */
+@media (max-width: 768px) {
+    .cafe-description {
+        padding: 2rem;
+        border-right-width: 3px;
+    }
+
+    .cafe-description::before {
+        right: -2rem;
+        font-size: 1.5rem;
+    }
+
+    .cafe-description p {
+        font-size: 1.2rem;
+        line-height: 2;
+    }
+
+    .cafe-image .feature-image {
+        max-width: 100%;
+    }
+
+    .cafe-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .cafe-buttons .btn-link,
+    .cafe-buttons .btn-download {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Farm Project Specific Styles */
+.farm-description {
+    background: linear-gradient(145deg, var(--white), #f0f4f8);
+    border-left: 5px solid var(--primary-color);
+    padding: 2.5rem;
+}
+
+.farm-description p {
+    font-size: 1.4rem;
+    line-height: 2.2;
+    color: var(--text-color);
+    text-align: justify;
+    position: relative;
+    padding-right: 2rem;
+}
+
+.farm-description p::before {
+    content: '🐔';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.8rem;
+}
+
+.farm-image {
+    position: relative;
+    padding: 2rem;
+}
+
+.farm-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(26, 115, 232, 0.1), rgba(255, 221, 87, 0.1));
+    border-radius: 30px;
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+.farm-image .feature-image {
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.farm-image .feature-image:hover {
+    transform: scale(1.05) translateY(-20px);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25);
+}
+
+/* Enhanced Button Styles for Farm Project */
+.farm-buttons .btn-link,
+.farm-buttons .btn-download {
+    background: linear-gradient(145deg, var(--primary-color), #1557b0);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.farm-buttons .btn-download {
+    background: linear-gradient(145deg, var(--secondary-color), #ffd32a);
+    color: var(--text-color);
+}
+
+/* Responsive Adjustments for Farm Project */
+@media (max-width: 768px) {
+    .farm-description p {
+        font-size: 1.2rem;
+        line-height: 2;
+        padding-right: 3rem;
+    }
+
+    .farm-description p::before {
+        font-size: 1.5rem;
+    }
+
+    .farm-image .feature-image {
+        max-width: 100%;
+    }
+
+    .farm-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Social Media Project Specific Styles */
+/* Food Project Specific Styles */
+/* Foil Manufacturing Project Styles */
+.foil-project {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+    padding: 2rem;
+    border-radius: 30px;
+}
+
+.foil-description {
+    background: linear-gradient(145deg, var(--white), #f8f9fa);/* Fast Food Project Specific Styles */
+.fastfood-project {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+    padding: 2rem;
+    border-radius: 30px;
+}
+
+.fastfood-description {
+    background: linear-gradient(145deg, var(--white), #fff3f3);
+    border-right: 5px solid #FF4444;
+    padding: 2.5rem;
+    position: relative;
+}
+
+.fastfood-description::before {
+    content: '🍔';
+    position: absolute;
+    right: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+}
+
+.fastfood-description p {
+    font-size: 1.4rem;
+    line-height: 2.2;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+.fastfood-image {
+    position: relative;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.fastfood-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 68, 68, 0.1),   /* Red */
+        rgba(255, 165, 0, 0.1),  /* Orange */
+        rgba(255, 193, 7, 0.1)   /* Yellow */
+    );
+    border-radius: 30px;
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+.fastfood-image .feature-image {
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fastfood-image .feature-image:hover {
+    transform: scale(1.05) translateY(-15px);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.2);
+}
+
+.fastfood-buttons {
+    margin-top: 3rem;
+}
+
+.fastfood-buttons .btn-link {
+    background: linear-gradient(145deg, #FF4444, #ff1a1a);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fastfood-buttons .btn-download {
+    background: linear-gradient(145deg, #FFA500, #ff8c00);
+    color: var(--white);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .fastfood-description {
+        padding: 2rem;
+        border-right-width: 3px;
+    }
+
+    .fastfood-description::before {
+        right: -2rem;
+        font-size: 1.5rem;
+    }
+
+    .fastfood-image .feature-image {
+        max-width: 100%;
+    }
+
+    .fastfood-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .fastfood-buttons .btn-link,
+    .fastfood-buttons .btn-download {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}/* Language School Project Styles */
+.language-project {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+    padding: 2rem;
+    border-radius: 30px;
+}
+
+.language-description {
+    background: linear-gradient(145deg, var(--white), #f0f9ff);
+    border-right: 5px solid #2196F3;
+    padding: 2.5rem;
+    position: relative;
+}
+
+.language-description::before {
+    content: '📚';
+    position: absolute;
+    right: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+}
+
+.language-description p {
+    font-size: 1.4rem;
+    line-height: 2.2;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+.language-image {
+    position: relative;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.language-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(33, 150, 243, 0.1),  /* Blue */
+        rgba(3, 169, 244, 0.1),  /* Light Blue */
+        rgba(129, 212, 250, 0.1)  /* Pale Blue */
+    );
+    border-radius: 30px;
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+.language-image .feature-image {
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.language-image .feature-image:hover {
+    transform: scale(1.05) translateY(-15px);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.2);
+}
+
+.language-buttons {
+    margin-top: 3rem;
+}
+
+.language-buttons .btn-link {
+    background: linear-gradient(145deg, #2196F3, #1976D2);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.language-buttons .btn-download {
+    background: linear-gradient(145deg, #03A9F4, #039BE5);
+    color: var(--white);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .language-description {
+        padding: 2rem;
+        border-right-width: 3px;
+    }
+
+    .language-description::before {
+        right: -2rem;
+        font-size: 1.5rem;
+    }
+
+    .language-image .feature-image {
+        max-width: 100%;
+    }
+
+    .language-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .language-buttons .btn-link,
+    .language-buttons .btn-download {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}/* Language School Project Styles */
+.language-project {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+    padding: 2rem;
+    border-radius: 30px;
+}
+
+.language-description {
+    background: linear-gradient(145deg, var(--white), #f0f9ff);
+    border-right: 5px solid #2196F3;
+    padding: 2.5rem;
+    position: relative;
+}
+
+.language-description::before {
+    content: '📚';
+    position: absolute;
+    right: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+}
+
+.language-description p {
+    font-size: 1.4rem;
+    line-height: 2.2;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+.language-image {
+    position: relative;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.language-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(33, 150, 243, 0.1),  /* Blue */
+        rgba(3, 169, 244, 0.1),  /* Light Blue */
+        rgba(129, 212, 250, 0.1)  /* Pale Blue */
+    );
+    border-radius: 30px;
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+.language-image .feature-image {
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.language-image .feature-image:hover {
+    transform: scale(1.05) translateY(-15px);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.2);
+}
+
+.language-buttons {
+    margin-top: 3rem;
+}
+
+.language-buttons .btn-link {
+    background: linear-gradient(145deg, #2196F3, #1976D2);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.language-buttons .btn-download {
+    background: linear-gradient(145deg, #03A9F4, #039BE5);
+    color: var(--white);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .language-description {
+        padding: 2rem;
+        border-right-width: 3px;
+    }
+
+    .language-description::before {
+        right: -2rem;
+        font-size: 1.5rem;
+    }
+
+    .language-image .feature-image {
+        max-width: 100%;
+    }
+
+    .language-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .language-buttons .btn-link,
+    .language-buttons .btn-download {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+    border-right: 5px solid #607D8B;
+    padding: 2.5rem;
+    position: relative;
+}
+
+.foil-description::before {
+    content: '📜';
+    position: absolute;
+    right: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+}
+
+.foil-description p {
+    font-size: 1.4rem;
+    line-height: 2.2;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+.foil-image {
+    position: relative;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.foil-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(96, 125, 139, 0.1),  /* Metalic Gray */
+        rgba(176, 190, 197, 0.1),  /* Light Gray */
+        rgba(207, 216, 220, 0.1)  /* Silver */
+    );
+    border-radius: 30px;
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+.foil-image .feature-image {
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.foil-image .feature-image:hover {
+    transform: scale(1.05) translateY(-15px);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.2);
+}
+
+.foil-buttons {
+    margin-top: 3rem;
+}
+
+.foil-buttons .btn-link {
+    background: linear-gradient(145deg, #607D8B, #546E7A);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.foil-buttons .btn-download {
+    background: linear-gradient(145deg, #78909C, #607D8B);
+    color: var(--white);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .foil-description {
+        padding: 2rem;
+        border-right-width: 3px;
+    }
+
+    .foil-description::before {
+        right: -2rem;
+        font-size: 1.5rem;
+    }
+
+    .foil-image .feature-image {
+        max-width: 100%;
+    }
+
+    .foil-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .foil-buttons .btn-link,
+    .foil-buttons .btn-download {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* E-commerce Project Specific Styles */
+.project-title {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-description {
+    background: linear-gradient(145deg, var(--white), #f8f9fa);
+    padding: 3rem;
+    border-radius: 25px;
+    position: relative;
+}
+
+.project-description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 5px 5px 0 0;
+}
+
+.project-description p {
+    font-size: 1.3rem;
+    line-height: 2.2;
+    text-align: justify;
+    color: var(--text-color);
+}
+
+.feature-image {
+    max-width: 85%;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 3rem 0;
+}
+
+.feature-image:hover {
+    transform: scale(1.05) translateY(-15px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+.action-buttons {
+    margin-top: 4rem;
+    gap: 2rem;
+}
+
+.btn-link, .btn-download {
+    padding: 1.2rem 2.5rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    min-width: 220px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, var(--primary-color), #1557b0);
+}
+
+.btn-download {
+    background: linear-gradient(145deg, var(--secondary-color), #ffd32a);
+}
+
+.btn-link::after, .btn-download::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+    transform: scale(0);
+    transition: transform 0.6s ease-out;
+}
+
+.btn-link:hover::after, .btn-download:hover::after {
+    transform: scale(1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .project-description {
+        padding: 2rem;
+    }
+
+    .project-description p {
+        font-size: 1.1rem;
+        line-height: 1.9;
+    }
+
+    .feature-image {
+        max-width: 95%;
+        margin: 2rem 0;
+    }
+
+    .action-buttons {
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+
+    .btn-link, .btn-download {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        min-width: 200px;
+    }
+}
+
+/* Farm Project Specific Styles */
+.farm-description {
+    background: linear-gradient(145deg, var(--white), #f0f4f8);
+    border-left: 5px solid var(--primary-color);
+    padding: 2.5rem;
+}
+
+.farm-description p {
+    font-size: 1.4rem;
+    line-height: 2.2;
+    color: var(--text-color);
+    text-align: justify;
+    position: relative;
+    padding-right: 2rem;
+}
+
+.farm-description p::before {
+    content: '🐔';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.8rem;
+}
+
+.farm-image {
+    position: relative;
+    padding: 2rem;
+}
+
+.farm-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(26, 115, 232, 0.1), rgba(255, 221, 87, 0.1));
+    border-radius: 30px;
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+.farm-image .feature-image {
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.farm-image .feature-image:hover {
+    transform: scale(1.05) translateY(-20px);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25);
+}
+
+/* Enhanced Button Styles for Farm Project */
+.farm-buttons .btn-link,
+.farm-buttons .btn-download {
+    background: linear-gradient(145deg, var(--primary-color), #1557b0);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.farm-buttons .btn-download {
+    background: linear-gradient(145deg, var(--secondary-color), #ffd32a);
+    color: var(--text-color);
+}
+
+/* Responsive Adjustments for Farm Project */
+@media (max-width: 768px) {
+    .farm-description p {
+        font-size: 1.2rem;
+        line-height: 2;
+        padding-right: 3rem;
+    }
+
+    .farm-description p::before {
+        font-size: 1.5rem;
+    }
+
+    .farm-image .feature-image {
+        max-width: 100%;
+    }
+
+    .farm-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Social Media Project Specific Styles */
+/* Food Project Specific Styles */
+.food-project {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+    padding: 2rem;
+    border-radius: 30px;
+}
+
+.food-description {
+    border-right: 5px solid #FF6B6B;
+    padding: 2.5rem;
+    position: relative;
+}
+
+.food-description::before {
+    content: '🍳';
+    position: absolute;
+    right: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+}
+
+.food-description p {
+    font-size: 1.4rem;
+    line-height: 2.2;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+.food-image {
+    position: relative;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.food-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 107, 107, 0.1),  /* Red */
+        rgba(255, 159, 67, 0.1),   /* Orange */
+        rgba(255, 92, 92, 0.1)     /* Pink */
+    );
+    border-radius: 30px;
+    transform: rotate(-2deg);
+    z-index: -1;
+}
+
+.food-image .feature-image {
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.food-image .feature-image:hover {
+    transform: scale(1.05) translateY(-15px);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.2);
+}
+
+.food-buttons {
+    margin-top: 3rem;
+}
+
+.food-buttons .btn-link {
+    background: linear-gradient(145deg, #FF6B6B, #ff5252);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.food-buttons .btn-download {
+    background: linear-gradient(145deg, #FF9F43, #ff922b);
+    color: var(--white);
+}
+
+/* Responsive Adjustments for Food Project */
+@media (max-width: 768px) {
+    .food-description {
+        padding: 2rem;
+        border-right-width: 3px;
+    }
+
+    .food-description::before {
+        right: -2rem;
+        font-size: 1.5rem;
+    }
+
+    .food-description p {
+        font-size: 1.2rem;
+        line-height: 2;
+    }
+
+    .food-image .feature-image {
+        max-width: 100%;
+    }
+
+    .food-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .food-buttons .btn-link,
+    .food-buttons .btn-download {
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}

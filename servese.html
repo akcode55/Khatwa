@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="serveses.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>خدمتنا</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <img src="final logo.png" alt="خطوه لوجو" class="logo">
+                </a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">خطوه</a></li>
+                <li><a href="servese.html">خدمتنا</a></li>
+                <li><a href="about khatwa.html">عن خطوه</a></li>
+                <li><a href="contact us.html">تواصل معنا</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="services-container">
+        <section class="services-header">
+            <h1>الخدمات التي يقدمها موقع خطوه</h1>
+        </section>
+
+        <section class="services-content">
+            <div class="description">
+                <p>
+                    يقدم موقع خطوه اقتراح لمشاريع تجارية وتقنية وخدمية وغذائية، وكل مجال من هذه المجالات يقترح مشاريع مقترحة وهذه من خدمات الموقع. والموقع أيضا يقدم دراسة جدوى لكل مشروع متواجد ومقترح من الموقع ويحتوي الموقع أيضا على روابط لمواقع أخرى تمنحك الطريق لتنفيذ المشروع.
+                
+                    فكرة المشروع الأساسية هي إتاحة أفكار للمشاريع لتساعد المستثمرين على وضع أموالهم ومحاولة زيادتها واستثمارها، وأيضا لتوفير فرص عمل أكثر لأكبر عدد من الشباب لزيادة الموارد المالية وجذب المستثمرين الأجانب.
+                
+                    هذا الموقع على مستوى العالم العربي والإسلامي وفكرة جديدة للشباب لحثهم على العمل ومحاولة مساعدتهم لبناء مستقبل أفضل ومساعدتهم على التقدم والازدهار.
+                </p>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

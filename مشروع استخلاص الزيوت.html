@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>مشروع استخلاص الزيوت</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <img src="final logo.png" alt="خطوه لوجو" class="logo">
+                </a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">خطوه</a></li>
+                <li><a href="servese.html">خدمتنا</a></li>
+                <li><a href="about khatwa.html">عن خطوه</a></li>
+                <li><a href="contact us.html">تواصل معنا</a></li>
+                <li><a href="login.html">تسجيل الدخول</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-container oil-project">
+        <div class="project-info">
+            <h1 class="project-title">مشروع استخلاص الزيوت</h1>
+            <div class="project-description oil-description">
+                <p>قم بشراء المعدات اللازمة لاستخلاص الزيوت من البذور والنباتات وقم بتعيين العمال المهرة في هذا المجال وقم بالتعاقد مع الشركات والمحلات لتوريد منتجاتك لهم</p>
+            </div>
+        </div>
+
+        <div class="project-image oil-image">
+            <img src="ماكينة استخلاص الزيوت.png" alt="استخلاص الزيوت" class="feature-image">
+        </div>
+
+        <div class="action-buttons oil-buttons">
+            <a href="https://reef.bena2.com/2024/10/30/%D8%DF%D8%B1%D8%A7%D8%B3%D8%A9-%D8%B8%D8%AF%D9%88%D9%89-%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D8%A7%D8%B3%D8%AA%D8%AE%D8%B1%D8%A7%D8%AC-%D8%A7%D9%84%D8%B2%D9%8I%D9%88%D8%AA-%D9%85%D9%86-%D8%A7%D9%84%D9%86" class="btn-link">معلومات اضافية</a>
+            <a href="https://packagingegyptian.com/" class="btn-link">خطوات التنفيذ</a>
+            <a href="https://www.mediafire.com/file/lfz4ek5ca9k02nm/دراسة+جدوي+لاستخلاص+الزيوت.pdf/file" class="btn-download" download>تحميل دراسة الجدوى</a>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenu.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
